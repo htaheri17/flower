@@ -1,0 +1,48 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background: linear-gradient(to top right, #ffdde1, #ee9ca7);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: "Courier New", sans-serif;
+}
+.garden {
+    display: flex;
+    gap: 50px;
+}
+.flower {
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle, #f9a8d4 40%, transparent 41%);
+    border-radius: 50%;
+    position: relative;
+    animation: bloom 4s infinite ease-in-out;
+}
+.flower::before,
+.flower::after {
+    content: "";
+    position:absolute;
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle, #f9a8d4 40%, transparent 41%);
+    border-radius: 50%;
+}
+.flower::before {
+    transform: rotate(60deg);
+}
+.flower::after {
+    transform: rotate(120deg);
+}
+@keyframes bloom{
+    0%, 100% {
+        transform: scale (0.95) rotate(0deg);
+    }
+    50% {
+        transform: scale(1.1) rotate(3deg);
+    }
+}
